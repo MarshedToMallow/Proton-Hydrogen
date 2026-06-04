@@ -36,3 +36,30 @@ That means before any actual computation takes place, it knows the print stateme
 
 I hope to gradually improve the way Proton handles comparisons and such to the extent possible.  
 A mixture of clever tricks and existing CAS (Computer Algebra System) techniques is hopefully enough to get things where I'd like, though I'm far from an expert.
+
+# Interpreters and Compilers
+
+Until a programming language can be run, it's just a specification.  
+Below are my current plans regarding the actual execution of Proton programs.
+
+## Hydrogen - The First Proton Interpreter
+
+Hydrogen is the first interpreter for Proton, intended as the messy, unoptimized alpha version.  
+Once Hydrogen is in a somewhat stable state, I'll take what I've learned there are map out a plan for Helium.
+
+Hydrogen is written in Python, since that's the programming language I'm most familiar with.  
+It isn't meant to be fast or efficient, just functional and enough to test the language with or write some useable programs.
+
+## Helium - The First Proton Compiler
+
+Where Hydrogen is intended as an alpha build, Helium aims to be a more solid and optimized build.  
+Additionally, Helium will be a compiler rather than an interpreter.  
+It's likely that it'll compile to LLVM, since that enables widespread support with the various existing backends, but the details are something I'll leave for my future self to determine.
+
+## After Helium
+
+Any future interpreters or compilers will follow the naming convention of the next element by atomic number.  
+
+The versioning system isn't determined yet, but will be by the time Helium is started.  
+Until then, Hydrogen is likely to have regular compatability-breaking changes as the language features are worked out.  
+It is likely that language features will only change drastically after Hydrogen when a new named interpreter or compiler is created.
