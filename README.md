@@ -4,7 +4,7 @@
 
 1. I am far from an expert regarding programming langauge design, compiler/interpreter design, or programming in general
 2. Proton is first and foremost for me, so any changes are my decisions and are intended to improve my own experience with the language
-  - This does not mean I will entirely ignore suggestions and feedback, but rather that the final decisions on those are my call
+    - This does not mean I will entirely ignore suggestions and feedback, but rather that the final decisions on those are my call
 3. The license is currently not included, but will hopefully be worked out soon
 
 # What is Proton?
