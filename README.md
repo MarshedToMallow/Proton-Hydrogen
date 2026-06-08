@@ -1,4 +1,7 @@
-# The Proton Programming Language
+# Hydrogen - The first Proton Interpreter
+
+Hydrogen is the name of the interpreter and Proton is the name of the programming language that Hydrogen can run code for.  
+The information here is largely about Proton rather than Hydrogen, but there is a section below regarding Hydrogen.
 
 ## Disclaimers
 
