@@ -63,3 +63,157 @@ Any future interpreters or compilers will follow the naming convention of the ne
 The versioning system isn't determined yet, but will be by the time Helium is started.  
 Until then, Hydrogen is likely to have regular compatability-breaking changes as the language features are worked out.  
 It is likely that language features will only change drastically after Hydrogen when a new named interpreter or compiler is created.
+
+# The Proton Specification
+
+At present, Proton is not well-defined and is considered volitile while Hydrogen is in development.  
+The full specification will be in a somewhat stable form in time for Helium.  
+Below are an unorganized collection of my current idea of Proton.
+
+## Variables and Data Types
+
+**Reals**
+```
+a: real = 2
+b: real = -1.6
+c: real = 10.8(3)
+
+discriminant: real = b^2 - 4*a*c
+
+if discriminant < 0: // 0 Real Roots
+    print("No real solutions")
+    halt
+elif discriminant == 0: // 1 Real Root
+    x: real = -b / (2*a)
+    print(f"x = {x}")
+else: // 2 Real Roots
+    x1: real = (-b - sqrt(discriminant)) / (2*a)
+    x2: real = (-b + sqrt(discriminant)) / (2*a)
+    print(f"x = {x1} and {x2}")
+```
+
+**Booleans**
+```
+a: bool = false
+b: bool = true
+
+if a and b:
+    print("Both")
+elif a xor b:
+    print("One")
+else:
+    print("None")
+```
+
+**Strings**
+```
+greeting: str = "Hello, World!"
+print(greeting)
+```
+
+**Segments**
+```
+real_numbers: seg = [-inf,+inf]
+if 5 in real_numbers:
+    print("Sounds about right")
+else:
+    print("what")
+```
+
+**Vectors**
+```
+numbers: vec = [0, 0.5, 8, 4.1]
+difference: vec = diff(numbers)
+
+if 0 in difference:
+    print("Two elements are identical")
+```
+
+**Arrays**
+```
+point_a: arr[real,3] = [3.2, 0.1, 0.9]
+point_b: arr[real,3] = [1, 1.2, 1.5]
+
+distance: real = dist(point_a, point_b)
+print(f"There are {distance}m remaining")
+```
+
+```
+xy: vec2[real] = [0.(3), -0.5]
+xyz: vec3[real] = [3.2, -0.1, 0.9]
+wxyz: vec4[real] = [0.01, -9, -5.4, 1.19]
+```
+
+## Conditionals
+
+```
+x: real = 50
+if x < 10:
+    print("Below 10")
+elif x < 100:
+    print("Below 100")
+else:
+    print("Beyond double digit")
+```
+
+## Loops
+
+The following two loops run the same number of iterations
+
+```
+for i in 10:
+    print(i)
+```
+
+```
+for i in 0..9:
+    print(i)
+```
+
+```
+while true:
+    print("help im trapped in a ")
+```
+
+## Match Case
+
+```
+name: str = "Mallow"
+match name case "Bob":
+    print("Lovely to meet you, Bob")
+case "Mallow":
+    print("I'd love to get to know you s'more, Mallow")
+else:
+    print("I'm not sure what to say, that's an interesting name")
+```
+
+## Functions
+
+```
+fn factorial(n: int[0,+inf]) -> int:
+    if n == 0 or 1:
+        return 1
+    return n * factorial(n - 1)
+```
+
+```
+fn primes() -> int[2,+inf]:
+    yield 2
+    n: int = 3
+    while true:
+        for p in primes():
+            if p * p > n:
+                yield n
+                break
+            if n % p == 0:
+                break
+        n += 2
+```
+
+## Objects
+
+```
+thing Sphere:
+    fn _on_create(position: vec3[real]) -> Sphere:
+        .position = position
+```
