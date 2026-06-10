@@ -414,6 +414,69 @@ class OperationCaret(Token):
     ):
         super().__init__(position, TokenType.OP_CARET, "^")
 
+class OperationNOT(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_NOT, "not")
+
+class OperationOR(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_OR, "or")
+
+class OperationNOR(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_NOR, "nor")
+
+class OperationAND(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_AND, "and")
+
+class OperationNAND(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_NAND, "nand")
+
+class OperationXOR(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_XOR, "xor")
+
+class OperationXNOR(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_XNOR, "xnor")
+
+class OperationIMPLY(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_IMPLY, "imply")
+
+class OperationNIMPLY(Token):
+    def __init__(
+        self,
+        position: Position
+    ):
+        super().__init__(position, TokenType.OP_NIMPLY, "nimply")
+
 
 
 class CompareEqual(Token):

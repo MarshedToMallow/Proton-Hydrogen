@@ -56,6 +56,16 @@ KEYWORD_TABLE: list[tuple[str, type[Token]]] = [
     ("int",     TypeInt),
     ("in",      In)
 
+    ("not",     OperationNOT),
+    ("or",      OperationOR),
+    ("nor",     OperationNOR),
+    ("and",     OperationAND),
+    ("nand",    OperationNAND),
+    ("xor",     OperationXOR),
+    ("xnor",    OperationXNOR),
+    ("imply",   OperationIMPLY),
+    ("nimply",  OperationNIMPLY)
+
 ]
 
 OPERATOR_TABLE: list[tuple[str, type[Token]]] = [
