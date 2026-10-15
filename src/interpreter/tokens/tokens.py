@@ -140,7 +140,10 @@ class Position:
             shift_amount += 2
         self.index += shift_amount
         self.pos[0] += token.token_string.count("\n")
-        self.pos[1] += len(token.token_string.split("\n")[-1])
+        if "\n" in token.token_string:
+            self.pos[1] = len(token.token_string.split("\n")[-1])
+        else:
+            self.pos[1] += len(token.token_string)
         return shift_amount
     
     def __repr__(self):
