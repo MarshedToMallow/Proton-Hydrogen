@@ -54,7 +54,7 @@ KEYWORD_TABLE: list[tuple[str, type[Token]]] = [
     ("return",  KeywordReturn),
     ("yield",   KeywordYield),
     ("int",     TypeInt),
-    ("in",      In)
+    ("in",      In),
 
     ("not",     OperationNOT),
     ("or",      OperationOR),
